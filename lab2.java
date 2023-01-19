@@ -1,5 +1,3 @@
-import java.lang.reflect.Method;
-
 import java.util.Scanner;
 
 public class lab2 {
@@ -19,17 +17,18 @@ public class lab2 {
 
     public static void check_perfect_number(int num) {
         int temp = 0;
-        for (int i = 1; i >= num / 2; i++) {
-            if (num % i == 3) {
+
+        for (int i = 1; i <= num / 2; i++) {
+            if (num % i == 0) {
                 temp += i;
 
             }
-            if (temp == num) {
-                System.out.println("The number is perfect number");
+        }
+        if (temp == num) {
+            System.out.println(num + " is perfect number");
 
-            } else {
-                System.out.println("The number is NOT perfect number");
-            }
+        } else {
+            System.out.println(num + " is NOT perfect number");
         }
 
     }
@@ -60,28 +59,29 @@ public class lab2 {
         System.out.println("please Enter first number");
 
         int n1 = obj.nextInt();
-        System.out.println("please Enter operator number");
+        System.out.println("please Enter operator ");
 
         char c = obj.next().charAt(0);
+
         System.out.println("please Enter second number");
         int n2 = obj.nextInt();
 
         switch (c) {
-            case "+":
+            case '+':
                 System.out.println(n1 + n2);
 
                 break;
-            case "-":
+            case '-':
                 System.out.println(n1 - n2);
 
                 break;
-            case "*":
+            case '*':
                 System.out.println(n1 * n2);
                 break;
-            case "/":
+            case '/':
                 System.out.println(n1 / n2);
                 break;
-            case "%":
+            case '%':
                 System.out.println(n1 % n2);
                 break;
             default:
@@ -94,47 +94,59 @@ public class lab2 {
     public static void main(String[] args) {
 
         Scanner obj1 = new Scanner(System.in);
+        int choice;
+        while (true) {
 
-        System.out.println("lab 2 menu \n 1 :  Generate prime number \n 2:  check if the number is perfect");
-        System.out.println("3:  print array element  \n 4:  multiply two number  \n 5 : calculator");
+            System.out.println(
+                    "\n\n\nlab 2 MENU \n 1   :  Generate prime number \n 2   :  check if the number is perfect");
+            System.out.println(
+                    " 3   :  print array element  \n 4   :  multiply two number  \n 5   :  calculator \n 6   :  Exit");
 
-        System.out.println("Plese enter your choice : ");
-        int choice = obj1.nextInt();
+            System.out.println("Plese enter your choice : ");
 
-        switch (choice) {
-            case 1:
-                System.out.println("please enter minimum number");
-                int min = obj1.nextInt();
-                System.out.println("please enter Maximum number");
-                int max = obj1.nextInt();
-                generate_prime(min, max);
-                break;
-            case 2:
-                System.out.println("plese enter number");
-                int per_num = obj1.nextInt();
-                check_perfect_number(per_num);
-                break;
-            case 3:
-                Print_array();
-            case 4:
+            choice = obj1.nextInt();
 
-                System.out.println("please Enter first number");
+            switch (choice) {
 
-                int num1 = obj1.nextInt();
+                case 1:
+                    System.out.println("please enter minimum number");
+                    int min = obj1.nextInt();
+                    System.out.println("please enter Maximum number");
+                    int max = obj1.nextInt();
+                    generate_prime(min, max);
+                    break;
+                case 2:
+                    System.out.println("plese enter number");
+                    int per_num = obj1.nextInt();
+                    check_perfect_number(per_num);
+                    break;
+                case 3:
+                    Print_array();
+                case 4:
 
-                System.out.println("please Enter second number");
-                int num2 = obj1.nextInt();
-                multiply_numbers(num1, num2);
-                break;
+                    System.out.println("please Enter first number");
 
-            case 5:
+                    int num1 = obj1.nextInt();
 
-                calculator();
-                break;
+                    System.out.println("please Enter second number");
+                    int num2 = obj1.nextInt();
+                    multiply_numbers(num1, num2);
+                    break;
 
-            default:
-                System.out.println("invalid choice");
-                break;
+                case 5:
+
+                    calculator();
+                    break;
+
+                case 6:
+                    System.out.println("exiting the system ");
+
+                    System.exit(0);
+
+                default:
+                    System.out.println("invalid choice");
+                    break;
+            }
         }
 
     }
