@@ -1,12 +1,13 @@
 import java.lang.reflect.Method;
 
 import java.util.Scanner;
+
 public class lab2 {
-    //Write a programme to generate prime number between M to N.
+    // Write a programme to generate prime number between M to N.
     public void generate_prime(int n , int m) {
 
         for(int i = n ; i <= m ; i++){
-            for (int j = 0 ; j<= i/2 ; j++)
+            for (int j = 3 ; j<= i/2 ; j++)
             {
                 if(i%j==0){
                     System.out.println(i);
@@ -16,11 +17,29 @@ public class lab2 {
         }
     //Write a programme to check whether the number is perfect or not?
 
+    public void check_perfect_number(int num) {
+        int temp=0;
+        for(int i = 1 ; i>= num/2 ; i ++){
+            if(num%i == 3)
+            {
+                temp+=i;
+
+            }
+        if(temp==num){
+            System.out.println("The number is perfect number");
+
+        }
+        else {
+            System.out.println("The number is NOT perfect number");
+        }
+        }
+        
+
+    }
+
 
         
     }
     //
 
-
-    
 }
