@@ -41,7 +41,7 @@ public class lab2 {
         int arrays[] = {3 ,35 , 45,23,53};
 
         for(int i=0 ; i< arrays.length ; i++){
-            System.err.println(arrays[i]);
+            System.out.println(arrays[i]);
 
         }
 
@@ -49,13 +49,47 @@ public class lab2 {
     //WAP to multiply two numbers using Command line argument.
     public static int multiply_numbers(int num1 , int num2) 
     {
-        return num1 * num2;
+        return (num1 * num2);
         
     }
-
-
-        
+     
     }
     //
+    public void calculator(){
+
+        Scanner obj = new Scanner(System.in);
+        System.out.println("please Enter first number");
+
+        int n1 = obj.nextInt();
+        System.out.println("please Enter operator number");
+
+        char c = obj.next().charAt(0);
+        System.out.println("please Enter second number");
+        int n2 = obj.nextInt();
+
+        switch (c) {
+            case "+":
+                System.out.println(n1+n2);
+ 
+                break;
+            case "-":
+                System.out.println(n1-n2);
+ 
+                break;
+            case "*":
+                System.out.println(n1*n2);
+                break;
+            case "/":
+                System.out.println(n1/n2);
+                break;
+            case "%":
+                System.out.println(n1%n2);
+                break;
+            default:
+                System.out.println("Invalid opperator");
+                break;
+        }
+
+    }
 
 }
