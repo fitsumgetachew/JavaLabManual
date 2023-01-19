@@ -36,7 +36,7 @@ public class lab2 {
         
     }
     //Write a program to print N elements in array.
-    public void Print_array (){
+    public static void Print_array (){
 
         int arrays[] = {3 ,35 , 45,23,53};
 
@@ -46,7 +46,12 @@ public class lab2 {
         }
 
     }
-    
+    //WAP to multiply two numbers using Command line argument.
+    public static int multiply_numbers(int num1 , int num2) 
+    {
+        return num1 * num2;
+        
+    }
 
 
         
